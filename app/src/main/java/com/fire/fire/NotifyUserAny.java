@@ -16,13 +16,13 @@ public  class NotifyUserAny {
 
     public static void notifyUser(Context context, String title, String notifications){
         NotificationManager notificationManager=(NotificationManager)context.getApplicationContext().getSystemService(Context.NOTIFICATION_SERVICE);
-        Intent intent = new Intent(context, Restaurant.class);
+        Intent intent = new Intent(context, MainActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_CLEAR_TOP);
         PendingIntent pendingNotificationIntent = PendingIntent.getActivity(context,
                 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
 
         Notification notification = new NotificationCompat.Builder(context)
-                .setSmallIcon(R.drawable.piza3)
+               // .setSmallIcon(R.drawable.piza3)
                 .setContentTitle(title)
                 .setContentText(notifications ).setColor(Color.argb(1, Color.BLACK, Color.GREEN, Color.GRAY))
                 .setContentIntent(pendingNotificationIntent)
